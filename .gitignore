@@ -1,0 +1,25 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+data-visualization-dashboard/node_modules
+node_modules
+data-visualization-dashboard/.bin
+data-visualization-dashboard/.pnp
+data-visualization-dashboard/.pnp.js
+
+# testing
+data-visualization-dashboard/coverage
+
+# production
+data-visualization-dashboard/build
+
+# misc
+data-visualization-dashboard/.DS_Store
+data-visualization-dashboard/.env.local
+data-visualization-dashboard/.env.development.local
+data-visualization-dashboard/.env.test.local
+data-visualization-dashboard/.env.production.local
+
+data-visualization-dashboard/npm-debug.log*
+data-visualization-dashboard/yarn-debug.log*
+data-visualization-dashboard/yarn-error.log*
