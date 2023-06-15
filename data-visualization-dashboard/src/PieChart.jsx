@@ -1,21 +1,7 @@
-import React, { useState,useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 
-const ScatterChart = ({ label1, label2 }) => {
-  const [data, setData] = useState([]);
-  // Sample data in JSON format
-  const fetchData = async () => {
-    const res = await fetch("http://127.0.0.1:8888/var?list="+label1+"%2C"+label2);
-    const temp = await res.json();
-    const data1 = [{label:label1+label2, data:temp}]
-    setData(data1);
-    // console.log(data);
-  };
-   // Fetch data on mount
-   useEffect(() => {
-    fetchData();
-    // console.log(data);
-  }, []);
+const ScatterChart = ({ data }) => {
   const chartRef = useRef(null);
   const chartInstanceRef = useRef(null);
 
@@ -31,8 +17,8 @@ const ScatterChart = ({ label1, label2 }) => {
     const datasets = data.map((dataset) => ({
       label: dataset.label,
       data: dataset.data,
-      // backgroundColor: 'rgba(0, 123, 255, 0.5)', // Customize the dot color
-      // borderColor: 'rgba(0, 123, 255, 1)', // Customize the dot border color
+      backgroundColor: 'rgba(0, 123, 255, 0.5)', // Customize the dot color
+      borderColor: 'rgba(0, 123, 255, 1)', // Customize the dot border color
     }));
 
     // Create the chart
