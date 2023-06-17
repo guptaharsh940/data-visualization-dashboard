@@ -170,25 +170,7 @@
             "title": "Nigeria Gross Domestic Product will grow by 0.8 percent in 2017 and 2.3 percent in 2018.",
             "likelihood": 4
         },
-        {
-            "end_year": "",
-            "intensity": 6,
-            "sector": "Aerospace & defence",
-            "topic": "war",
-            "insight": "Lebanon: No Land for Beginning Politicians",
-            "url": "https://www.avimelamed.com/2017/01/07/lebanon-no-land-for-beginning-politicians/",
-            "region": "Western Asia",
-            "start_year": "",
-            "impact": "",
-            "added": "January, 17 2017 03:18:22",
-            "published": "January, 07 2017 00:00:00",
-            "country": "Lebanon",
-            "relevance": 2,
-            "pestle": "Political",
-            "source": "Avi Melamed",
-            "title": "A war in Lebanon will increase the already heavy economic burden Saudi Arabia is carrying.",
-            "likelihood": 3
-        },
+         
         {
             "end_year": "",
             "intensity": 4,

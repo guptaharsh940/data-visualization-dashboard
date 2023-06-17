@@ -1,41 +1,36 @@
 
 import React from 'react';
-import ScatterChart from './ScatterChart';
-import PieChart from './PieChart';
+import Summary from './Card/Summary';
 
-const App = () => {
-  
-
-  
-
+const App = () => { 
   return (
     <div>
-      
-    <div className="card">
-      <h1>Scatter Chart</h1>
-    <div className = "container">
-    <div className = "row py-1">
-      
-        
-      <ScatterChart label1="intensity" label2 = "likelihood" />
-      <ScatterChart label1="intensity" label2 = "relevance" />
+
+      <div className="card">
+        <div className="container">
+          <div className="row py-1">
+            <Summary category="sector" title="Top Sectors"/>
+            <Summary category="topic" title="Top Topics"/>
+          </div>
+        </div>
+        <div className="container">
+          <div className="row py-1">
+            <Summary category="region" title="Top Regions"/>
+            <Summary category="country" title="Top Countries"/>
+          </div>
+        </div>
+        <div className="container">
+          <div className="row py-1">
+            <Summary category="pestle" title="Top Pestles"/>
+            <Summary category="source" title="Top Sources"/>
+          </div>
+        </div>
       </div>
-      </div>
+
+    
+
     </div>
 
-    <div className="card">
-      <h1>Pie Chart</h1>
-    <div className = "container">
-    <div className = "row py-1">
-      
-      <PieChart chartKey="sector"/>
-      <PieChart chartKey="topic"/>
-      </div>
-      </div>
-    </div>
-    
-    </div>
-    
   );
 };
 

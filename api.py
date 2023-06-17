@@ -52,6 +52,59 @@ def get():
         d.append(temp)
     return json.dumps(d)
 
+@app.route("/pie", methods=["GET"])
+def piechart():
+    client = pymongo.MongoClient()
+    db = client["database_sample"]
+    collection = db["collection"]
+    data = collection.find()
+    # d=[]
+    ans = []
+    key = request.args.get('key')
+    d={}
+    for i in data:
+        if(i[key] == ""):
+            i[key] = "Null"
+        if(i[key] not in d.keys()):
+            d[i[key]] = 1
+        
+        else:
+            d[i[key]]+=1
+    ans.append(list(d.keys()))
+    ans.append(list(d.values()))
+    return json.dumps(ans)
+
+
+@app.route("/top", methods=["GET"])
+def top():
+    client = pymongo.MongoClient()
+    db = client["database_sample"]
+    collection = db["collection"]
+    data = collection.find()
+    # d=[]
+    ans = []
+    key = request.args.get('category')
+    d={}
+    for i in data:
+        if(i[key] not in d.keys()):
+            d[i[key]] = 1
+        
+        else:
+            d[i[key]]+=1
+
+    sor = sorted(d.items(),key=lambda x:x[1])
+    j = 5
+    for i in range(-1, -len(sor)-1, -1):
+        temp = {}
+        if(j == 0):
+            break
+        if(sor[i][0]==''):
+            continue
+        temp['category']=sor[i][0]
+        temp['value']=sor[i][1]
+        ans.append(temp)
+        j-=1
+    return json.dumps(ans)
 
 if __name__ == '__main__':
     app.run(port=8888)
