@@ -33,7 +33,7 @@ const Progress_bar = ({progress, text}) => {
         verticalAlign: 'middle'
 
       }
-        
+        const progres = progress.toString()
     return (
     <div style={Parentdiv}>
       <div style={Childdiv}>
