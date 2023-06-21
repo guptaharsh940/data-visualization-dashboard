@@ -47,6 +47,7 @@ const ScatterChart = ({ label1, label2 }) => {
             type: 'linear', // Use linear scale for X-axis
             position: 'bottom',
           },
+          
         },
       },
     });
